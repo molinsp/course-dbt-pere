@@ -1,21 +1,15 @@
-
 version: 2
 
 models:
-  - name: my_first_dbt_model
-    description: "A starter dbt model"
+  - name: stg_superheroes
+    description: Demographics about each superhero such as name, hair color, height and weight. 
     columns:
-      - name: id
-        description: "The primary key for this table"
+      - name: name
         tests:
-          - unique
           - not_null
-
-  - name: my_second_dbt_model
-    description: "A starter dbt model"
-    columns:
-      - name: id
-        description: "The primary key for this table"
+      - name: height
         tests:
-          - unique
-          - not_null
+          - positive_values
+      - name: weight
+        tests:
+          - positive_values
