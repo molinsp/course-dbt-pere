@@ -1,6 +1,15 @@
 image: corise/dbt-course-gitpod
 tasks:
-  - command: sudo /etc/init.d/postgresql start && mkdir -p /workspace/.dbt && ln -snf /workspace/.dbt ~/.dbt && export PGPASSWORD=corise PGUSER=corise PGDATABASE=dbt
+  - name: Start Postgres Server
+    command: sudo /etc/init.d/postgresql start && mkdir -p /workspace/.dbt && ln -snf /workspace/.dbt ~/.dbt && export PGPASSWORD=corise PGUSER=corise PGDATABASE=dbt
+  - name: Install Python Packages
+    command: pip install -r requirements.txt
 ports:
   - port: 8000
     onOpen: open-preview
+
+vscode:
+  extensions:
+    - ms-toolsai.jupyter
+    - ms-python.python
+    - cweijan.vscode-database-client2

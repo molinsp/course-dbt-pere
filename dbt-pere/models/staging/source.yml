@@ -1,0 +1,41 @@
+version: 2
+
+sources:
+
+  - name: stg_greenery # name of the source 
+    schema: public # this is the schema our raw data lives in
+    database: dbt # this is the name of our database
+
+    quoting:
+      database: false
+      schema: false
+      identifier: false
+
+    freshness:
+      warn_after: {count: 24, period: hour}
+      error_after: {count: 48, period: hour}
+
+    tables:
+      - name: events 
+        loaded_at_field: created_at
+        description: >
+          Usage analytic events
+      - name: users 
+        loaded_at_field: created_at
+        description: >
+          Information about users
+      - name: addresses 
+        description: >
+          User addresses
+      - name: orders 
+        description: >
+          Records of orders
+      - name: order_items 
+        description: >
+          Items contained in orders 
+      - name: products 
+        description: >
+          Products in Greenery store
+      - name: promos 
+        description: >
+          Promotions
