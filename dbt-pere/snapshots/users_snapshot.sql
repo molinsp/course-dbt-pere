@@ -1,4 +1,4 @@
-{% snapshot superheroes_snapshot %}
+{% snapshot users_snapshot %}
 
   {{
     config(

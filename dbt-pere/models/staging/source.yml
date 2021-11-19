@@ -17,11 +17,9 @@ sources:
 
     tables:
       - name: events 
-        loaded_at_field: created_at
         description: >
           Usage analytic events
       - name: users 
-        loaded_at_field: created_at
         description: >
           Information about users
       - name: addresses 

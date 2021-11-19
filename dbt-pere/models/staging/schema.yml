@@ -115,7 +115,7 @@ models:
     description: ''
   - name: promo_id
     description: ''
-  - name: discout
+  - name: discount
     description: ''
   - name: status
     description: ''
