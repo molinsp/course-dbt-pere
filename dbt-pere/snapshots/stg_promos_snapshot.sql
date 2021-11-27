@@ -1,4 +1,4 @@
-{% snapshot promos_snapshot %}
+{% snapshot stg_promos_snapshot %}
 
   {{
     config(
@@ -11,6 +11,6 @@
   }}
 
   SELECT * 
-  FROM {{ ref('stg_greenery', 'promos') }}
+  FROM {{ ref('stg_promos') }}
 
 {% endsnapshot %}

@@ -1,4 +1,4 @@
-{% snapshot users_snapshot %}
+{% snapshot stg_users_snapshot %}
 
   {{
     config(
@@ -11,6 +11,6 @@
   }}
 
   SELECT * 
-  FROM {{ source('stg_greenery', 'users') }}
+  FROM {{ ref('stg_users') }}
 
 {% endsnapshot %}

@@ -3,111 +3,64 @@ models:
 - name: stg_events
   description: ''
   columns:
-  - name: id
-    description: ''
   - name: event_id
     description: ''
-  - name: session_id
-    description: ''
-  - name: user_id
-    description: ''
-  - name: page_url
-    description: ''
-  - name: created_at
-    description: ''
-  - name: event_type
-    description: ''
+    tests:
+          - unique
+          - not_null
 - name: stg_users
   description: ''
   columns:
-  - name: id
-    description: ''
   - name: user_id
     description: ''
-  - name: first_name
-    description: ''
-  - name: last_name
-    description: ''
-  - name: email
-    description: ''
-  - name: phone_number
-    description: ''
-  - name: created_at
-    description: ''
-  - name: updated_at
-    description: ''
-  - name: address_id
-    description: ''
+    tests:
+          - unique
+          - not_null
 - name: stg_addresses
   description: ''
   columns:
-  - name: id
-    description: ''
   - name: address_id
     description: ''
-  - name: address
-    description: ''
-  - name: zipcode
-    description: ''
-  - name: state
-    description: ''
-  - name: country
-    description: ''
+    tests:
+          - unique
+          - not_null
 - name: stg_orders
   description: ''
   columns:
-  - name: id
-    description: ''
   - name: order_id
     description: ''
-  - name: user_id
-    description: ''
-  - name: promo_id
-    description: ''
-  - name: address_id
-    description: ''
-  - name: created_at
-    description: ''
-  - name: order_cost
-    description: ''
-  - name: shipping_cost
-    description: ''
-  - name: order_total
-    description: ''
-  - name: tracking_id
-    description: ''
-  - name: shipping_service
-    description: ''
-  - name: estimated_delivery_at
-    description: ''
-  - name: delivered_at
-    description: ''
+    tests:
+          - unique
+          - not_null
   - name: status
     description: ''
+    tests:
+          - accepted_values:
+              values: ['shipped', 'pending', 'preparing', 'delivered']
 - name: stg_order_items
-  description: ''
+  description: "Model containing order basket information: product_id and quantity"
   columns:
-  - name: id
-    description: ''
-  - name: order_id
-    description: ''
-  - name: product_id
-    description: ''
-  - name: quantity
-    description: ''
+    - name: quantity
+      tests:
+        - not_null
+        - positive_values
 - name: stg_products
   description: ''
   columns:
-  - name: id
-    description: ''
   - name: product_id
     description: ''
-  - name: name
-    description: ''
+    tests:
+          - unique
+          - not_null
   - name: price
     description: ''
+    tests:
+          - not_null
+          - positive_values
   - name: quantity
     description: ''
+    tests:
+          - not_null
 - name: stg_promos
   description: ''
   columns:
