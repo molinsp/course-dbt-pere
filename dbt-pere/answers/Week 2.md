@@ -33,15 +33,15 @@ FROM orders
 2. User income level
 
 ### Intermediate models
-I created a few intermediate models joining the addresses. I feel these could be joined both to a user as the "main user address", as well as change at the moment of shipment and thus I joined it as well with the orders.
+I created a few intermediate models joining the addresses. I feel these could be joined both to a user as a dimension, representing the "main user address", as well as change at the order level as the "delivery address".
 
 ### Marts
-**Core**
+#### Core
 Key models that I expect to re-use across many functions
-**Marketing**
+#### Marketing
 A fact sales table that shows which items have been sold, which can be useful for marketing reporting.
 A user order facts table to show key purchasing behavior of users.
-**Product**
+#### Product
 A fact events table for PMs to run usage analytics queries
 
 ![Models](model_overview.png)
