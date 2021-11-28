@@ -14,7 +14,8 @@ renamed as (
         user_id,
         page_url,
         created_at,
-        event_type
+        event_type,
+        substring(page_url from '.*product\/(.*)') as product_id
 
     from source
 

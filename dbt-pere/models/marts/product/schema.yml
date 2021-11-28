@@ -1,0 +1,5 @@
+version: 2
+
+models:
+- name: fact_events
+  description: 'Events fact table'

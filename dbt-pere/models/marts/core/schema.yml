@@ -1,0 +1,7 @@
+version: 2
+models:
+- name: dim_users
+  description: 'Useres dimension table'
+- name: fact_orders
+  description: 'Orders fact table'
+- name: dates

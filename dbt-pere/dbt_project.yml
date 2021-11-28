@@ -32,9 +32,13 @@ clean-targets:         # directories to be removed by `dbt clean`
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 models:
-  staging_models:
-  
+  dbt_greenery:
     # This configures models found in models/staging/
+    example:
+      +enabled: false
     staging:
       +enabled: true
       +materialized: view 
+    intermediate:
+      +enabled: true
+      +materialized: table
