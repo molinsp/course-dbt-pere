@@ -1,4 +1,10 @@
 version: 2
 models:
 - name: int_orders
-  description: ''
+  description: "Orders with addresses"
+- name: int_users
+  description: "Users with addresses"
+- name: int_products_sold
+  description: "Orders on a per product level"
+- name: int_user_product_purchases
+  description: "Overview per user and purchased product"

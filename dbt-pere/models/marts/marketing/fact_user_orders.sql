@@ -17,7 +17,6 @@ with orders as (
     group by 1
 )
 
-
 select users.user_id
     , users.first_name
     , users.last_name
@@ -35,6 +34,7 @@ select users.user_id
     , order_facts.count_shipping_services
     , order_facts.count_orders_with_discount
     , 100.0 * order_facts.count_orders_with_discount / nullif(order_facts.order_count, 0) as percent_orders_with_discount
+
 from users
 left join order_facts
     on users.user_id = order_facts.user_id

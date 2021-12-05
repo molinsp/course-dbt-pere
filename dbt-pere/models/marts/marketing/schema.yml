@@ -1,5 +1,5 @@
 version: 2
 models:
-- name: fact_sales
-  description: 'Ordered items fact table'
-- name: user_order_facts
+- name: fact_user_orders
+  description: "Facts about user orders"
+- name: fact_users_products
