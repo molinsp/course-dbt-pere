@@ -55,3 +55,32 @@ group by session_id
 ```
 
 ## Part 3
+Created a macro to grant roles on all tables in the used schema
+```
+{% macro grant(role) %}
+
+    {% set sql %}
+      GRANT USAGE ON SCHEMA {{ schema }} TO {{ role }};
+      GRANT SELECT ON ALL tables in SCHEMA {{ schema }} TO {{ role }};
+    {% endset %}
+
+    {% set table = run_query(sql) %}
+
+{% endmacro %}
+```
+
+And I'm running it after the project builds
+```
+on-run-end:
+   - "{{ grant('reporting') }}"
+```
+
+## Part 4
+I have used several macros across the project:
+1. dbt-labs/codegen to create the initial staging models
+2. dbt-labs/dbt_utils to generate date splines
+3. Custome positive-values macro
+4. grant creating macro mentioned above
+
+## Part 5
+Macros have not changed the dag much but made the code more reusable
