@@ -8,3 +8,5 @@ models:
   description: "Orders on a per product level"
 - name: int_user_product_purchases
   description: "Overview per user and purchased product"
+- name: int_sessions
+  description: "Sessions with dummies indicating event type"
