@@ -10,3 +10,8 @@ models:
   description: "Overview per user and purchased product"
 - name: int_sessions
   description: "Sessions with dummies indicating event type"
+  columns:
+  - name: session_id
+    tests:
+          - unique
+          - not_null

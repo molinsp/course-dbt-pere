@@ -1,0 +1,13 @@
+version: 2
+
+exposures:
+  - name: Product Funnel Dashboard
+    description: >
+      Funnel Dashboard with avg. dropoff
+    type: dashboard
+    maturity: high
+    owner:
+      name: Pere Molins
+      email: pere.molins@color.com
+    depends_on:
+      - ref("fact_funnel")

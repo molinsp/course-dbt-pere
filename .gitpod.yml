@@ -4,6 +4,8 @@ tasks:
     command: sudo /etc/init.d/postgresql start && mkdir -p /workspace/.dbt && ln -snf /workspace/.dbt ~/.dbt && export PGPASSWORD=corise PGUSER=corise PGDATABASE=dbt
   - name: Install Python Packages
     command: pip install -r requirements.txt
+  - name: Create Postgres role
+    command: psql -c "CREATE ROLE reporting;"
 ports:
   - port: 8000
     onOpen: open-preview

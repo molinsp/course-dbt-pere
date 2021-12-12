@@ -1,5 +1,9 @@
 version: 2
 
 models:
+- name: fact_sessions
+  description: 'Sessions table'
 - name: fact_events
-  description: 'Events fact table'
+  description: 'Events table'
+- name: fact_funnel
+  description: 'Funnel'
